@@ -61,9 +61,9 @@ export function App(props) {
       .doc(user.uid)
       .collection("tasks")
       .add({ text: new_task, checked: false })
-      .then(() => {
-        setNewTask("");
-      });
+      .then(() => {});
+
+    setNewTask("");
   };
 
   const handleDeleteTask = task_id => {
@@ -95,7 +95,7 @@ export function App(props) {
 
   return (
     <div>
-      <AppBar color="secondary" position="static">
+      <AppBar color="secondary" position="static" style={{ width: "100%" }}>
         <Toolbar>
           <Typography
             color="inherit"
@@ -135,6 +135,11 @@ export function App(props) {
           <div style={{ display: "flex", marginTop: "40px" }}>
             <TextField
               fullWidth
+              onKeyPress={e => {
+                if (e.key === "Enter") {
+                  handleAddTask();
+                }
+              }}
               placeholder="Add a task here"
               style={{ marginRight: "30px" }}
               value={new_task}
