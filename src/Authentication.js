@@ -32,7 +32,7 @@ export function SignIn(props) {
 
   return (
     <div>
-      <AppBar position="static" color="primary">
+      <AppBar position="static" color="secondary">
         <Toolbar>
           <Typography variant="h6" color="inherit">
             Sign In
@@ -70,7 +70,11 @@ export function SignIn(props) {
             <Typography>
               Don't have an account? <Link to="/signup">Sign up!</Link>
             </Typography>
-            <Button color="primary" variant="contained" onClick={handleSignIn}>
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={handleSignIn}
+            >
               Sign in
             </Button>
           </div>
@@ -104,7 +108,7 @@ export function SignUp(props) {
 
   return (
     <div>
-      <AppBar position="static" color="primary">
+      <AppBar position="static" color="secondary">
         <Toolbar>
           <Typography variant="h6" color="inherit">
             Sign Up
@@ -142,7 +146,11 @@ export function SignUp(props) {
             <Typography>
               Already have an account? <Link to="/">Sign in!</Link>
             </Typography>
-            <Button color="primary" variant="contained" onClick={handleSignUp}>
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={handleSignUp}
+            >
               Sign up
             </Button>
           </div>
